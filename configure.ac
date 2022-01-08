@@ -1,8 +1,8 @@
 #                                               -*- Autoconf -*-
 # Process this file with autoconf to produce a configure script.
 
-AC_PREREQ([2.61])
-AC_INIT([mosh], [1.3.2.95rc1], [mosh-devel@mit.edu])
+AC_PREREQ([2.71])
+AC_INIT([mosh],[1.3.2],[mosh-devel@mit.edu])
 AM_INIT_AUTOMAKE([foreign std-options -Wall -Werror -Wno-portability])
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 AC_CONFIG_SRCDIR([src/frontend/mosh-client.cc])
@@ -322,7 +322,7 @@ PKG_CHECK_MODULES([TINFO], [tinfo],
         AC_SUBST([TINFO_LIBS], ["$TINFO_LDFLAGS -ltinfo"])],)])])
 
 # Then try to find it in a specific install dir
-AC_ARG_WITH(curses, [AC_HELP_STRING([--with-curses=DIR], [Where curses is installed])],
+AC_ARG_WITH(curses, [AS_HELP_STRING([--with-curses=DIR],[Where curses is installed])],
     [if test $withval != yes; then
         cv_curses=$withval
     fi
